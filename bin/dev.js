@@ -1,27 +1,27 @@
-const webpack = require('webpack');
-const webpackConfig = require('../webpack.config');
-const nodemon = require('nodemon');
-const path = require('path');
-const compiler = webpack(webpackConfig);
+const webpack = require( 'webpack' );
+const webpackConfig = require( '../webpack.config' );
+const nodemon = require( 'nodemon' );
+const path = require( 'path' );
+const compiler = webpack( webpackConfig );
 
-compiler.run(err => {
-    if (err) {
-        console.log('Error run: ', err);
+compiler.run( err => {
+    if ( err ) {
+        console.log( 'Error run: ', err );
     }
 
-    compiler.watch({}, err => {
-        if (err) {
-            console.log('Error watch: ', err);
+    compiler.watch( {}, err => {
+        if ( err ) {
+            console.log( 'Error watch: ', err );
         } else {
-            console.log('Success');
+            console.log( 'Success' );
         }
-    });
+    } );
 
-    nodemon({
-        script: path.resolve(__dirname, '../dist/server/server.js'),
+    nodemon( {
+        script: path.resolve( __dirname, '../dist/server/server.js' ),
         watch: [
-            path.resolve(__dirname, '../dist/server'),
-            path.resolve(__dirname, '../dist/client'),
+            path.resolve( __dirname, '../dist/server' ),
+            path.resolve( __dirname, '../dist/client' ),
         ]
-    });
-});
+    } );
+} );

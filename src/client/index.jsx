@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Header} from '../shared/Header';
+import { Header } from '../shared/Header';
 
-window.addEventListener('load', () => {
-    ReactDOM.hydrate(<Header/>, document.getElementById('react_root'));
-})
+window.addEventListener( 'load', () => {
+    ReactDOM.hydrate( <Header/>, document.getElementById( 'react_root' ) );
+} );
