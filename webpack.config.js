@@ -36,13 +36,35 @@ module.exports = {
                             modules: {
                                 mode: 'local',
                                 localIdentName: '[name]__[local]--[hash:base64:5]',
-                            }
+                            },
+                            sourceMap: true,
                         },
 
                     },
-                    'sass-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        'autoprefixer',
+                                        {
+                                            cascade: false,
+                                        },
+                                    ],
+                                ],
+                            },
+                        },
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
                 ]
-            }
+            },
         ]
     },
     plugins: [
@@ -53,5 +75,5 @@ module.exports = {
         open: true,
         hot: isDev
     },
-    devtool: setupDevtool()
+    devtool: setupDevtool(),
 };
