@@ -19,7 +19,7 @@ function setupDevtool() {
 module.exports = {
     mode: NODE_ENV ? NODE_ENV : 'development',
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+        extensions: [ '.js', '.jsx', '.ts', '.tsx', '.json' ],
         alias: {
             'react-dom': IS_DEV ? '@hot-loader/react-dom' : 'react-dom',
         }
@@ -34,10 +34,10 @@ module.exports = {
         publicPath: '/static/',
     },
     module: {
-        rules: [{
+        rules: [ {
             test: /\.[tj]sx?$/,
-            use: ['ts-loader']
-        }]
+            use: [ 'ts-loader' ]
+        } ]
     },
     devtool: setupDevtool(),
     plugins: IS_DEV
