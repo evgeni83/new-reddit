@@ -12,10 +12,6 @@ const clientCompiler = webpack( webpackClientConfig );
 hmrServer.use( webpackDevMiddleware( clientCompiler, {
     publicPath: webpackClientConfig.output.publicPath,
     serverSideRender: true,
-    noInfo: true,
-    watchOptions: {
-        ignore: /dist/,
-    },
     writeToDisk: true,
     stats: 'errors-only',
 } ) );

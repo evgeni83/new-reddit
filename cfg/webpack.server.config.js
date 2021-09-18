@@ -17,7 +17,18 @@ module.exports = {
     module: {
         rules: [{
             test: /\.[tj]sx?$/,
-            use: ['ts-loader']
+            use: ['awesome-typescript-loader']
+        }, {
+            test: /\.css$/,
+            use: [ {
+                loader: 'css-loader',
+                options: {
+                    modules: {
+                        mode: 'local',
+                        localIdentName: '[name]__[local]--[hash:base64:5]'
+                    },
+                }
+            } ]
         }]
     },
     optimization: {

@@ -36,7 +36,18 @@ module.exports = {
     module: {
         rules: [ {
             test: /\.[tj]sx?$/,
-            use: [ 'ts-loader' ]
+            use: [ 'awesome-typescript-loader' ]
+        }, {
+            test: /\.css$/,
+            use: [ 'style-loader', {
+                loader: 'css-loader',
+                options: {
+                    modules: {
+                        mode: 'local',
+                        localIdentName: '[name]__[local]--[hash:base64:5]'
+                    }
+                }
+            } ]
         } ]
     },
     devtool: setupDevtool(),
