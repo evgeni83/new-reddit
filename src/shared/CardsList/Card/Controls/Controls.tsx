@@ -2,18 +2,14 @@ import React from 'react';
 import styles from './controls.css';
 import {KarmaCounter} from "./KarmaCounter";
 import {CommentsButton} from "./CommentButton";
-import {ShareButton} from "./ShareButton";
-import {SaveButton} from "./SaveButton";
+import {Actions} from "./Actions";
 
 export function Controls() {
     return (
         <div className={styles.controls}>
             <KarmaCounter/>
             <CommentsButton/>
-            <div className={styles.actions}>
-                <ShareButton/>
-                <SaveButton/>
-            </div>
+            <Actions/>
         </div>
     );
 }

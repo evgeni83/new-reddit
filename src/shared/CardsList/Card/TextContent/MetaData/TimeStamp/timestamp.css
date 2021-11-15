@@ -1,0 +1,13 @@
+.timeStamp, .timeStamp span {
+    color: var(--grey99);
+}
+
+.publishedLabel {
+    display: none;
+}
+
+@media all and (min-width: 1024px) {
+    .publishedLabel {
+        display: inline;
+    }
+}
